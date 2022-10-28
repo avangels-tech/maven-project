@@ -15,23 +15,22 @@ pipeline {
 
         stage('Test') {
             steps {
-                  sh 'echo test'
-                # sh './jenkins/test/mvn.sh mvn test'
+                 sh 'echo test'
+                 sh './jenkins/test/mvn.sh mvn test'
             }
 
         }
 
         stage('Push') {
             steps {
-                  sh 'echo push'
-                # sh './jenkins/push/push.sh'
+                 sh 'echo push'
+                 sh './jenkins/push/push.sh'
             }
         }
 
         stage('Deploy') {
             steps {
                   sh 'echo deploy'
-                # sh './jenkins/deploy/deploy.sh'
             }
         }
     }
