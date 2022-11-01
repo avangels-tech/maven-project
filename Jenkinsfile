@@ -38,6 +38,18 @@ pipeline {
                  sh './jenkins/push/push.sh'
             }
         }
+        
+         stage('ECR push') {
+            steps {
+               script {
+                   docker.withRegistry('https://971691552202.dkr.ecr.ap-south-1.amazonaws.com', 
+                   'ecr:ap-south-1:avangels-maven-ecr') {
+                   def myImage = docker.build ('maven:2.1')
+                   myImage.push('2.1')
+                  }
+               }
+             }
+         }
 
         stage('Deploy') {
             steps {
