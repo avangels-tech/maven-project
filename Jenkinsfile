@@ -43,7 +43,7 @@ pipeline {
             steps {
                script {
                    docker.withRegistry('https://971691552202.dkr.ecr.ap-south-1.amazonaws.com', 
-                   'ecr:ap-south-1:avangels-maven-ecr') {
+                   'ecr:ap-south-1:aws-ecr-user') {
                    def myImage = docker.build ('maven:2.1')
                    myImage.push('2.1')
                   }
