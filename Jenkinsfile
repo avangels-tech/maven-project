@@ -44,7 +44,7 @@ pipeline {
                script {
                    docker.withRegistry('https://971691552202.dkr.ecr.ap-south-1.amazonaws.com', 
                    'ecr:ap-south-1:aws-ecr-user') {
-                   def myImage = docker.build ('maven:3.2', 'maven:latest' , 'maven:build4')
+                   def myImage = docker.build ("maven:3.2", "maven:latest" , "maven:build4")
                    myImage.push('3.2')
                    myImage.push('latest')
                    myImage.push('build4')
